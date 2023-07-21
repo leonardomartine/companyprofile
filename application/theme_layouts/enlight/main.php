@@ -89,7 +89,7 @@
 
   <?php if (in_array($this->router->fetch_class(), ['dashboard'])) : ?>
     <section class="flexslider">
-      <ul class="slides">
+      <!-- <ul class="slides">
         <li style="background-image: url('<?php echo base_url($data->background_image) ?>')" class="overlay">
           <div class="container">
             <div class="row">
@@ -101,7 +101,63 @@
             </div>
           </div>
         </li>
-      </ul>
+      </ul> -->
+
+      <!-- Carousel container -->
+      <div id="my-pics" class="carousel slide" data-ride="carousel" style="width:max-width;margin:auto;">
+
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#my-pics" data-slide-to="0" class="active"></li>
+          <li data-target="#my-pics" data-slide-to="1"></li>
+          <li data-target="#my-pics" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Content -->
+        <div class="carousel-inner" role="listbox">
+
+          <!-- Slide 1 -->
+          <div class="item active">
+            <img src="<?php echo base_url('application/theme_layouts/enlight/saltwater.jpg'); ?>" alt="Saltwater Fish" style="opacity: 0.6;">
+            <div class="carousel-caption">
+              <h1 style="font-weight: bold; color: white;">Emperor Angelfish</h1>
+              <p style="font-weight: bold; font-size:larger;"> It is a reef-associated fish.</p>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="item">
+            <img src="<?php echo base_url('application/theme_layouts/enlight/freshwater.jpg') ?>" alt="Freshwater Fish" style="opacity: 0.6;">
+            <div class="carousel-caption">
+              <h1 style="font-weight: bold; color: white;">Discus Fish</h1>
+              <p style="font-weight: bold; font-size:larger;">Some of the most stunning specimens you can stock in an aquarium.</p>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="item">
+            <img src="<?php echo base_url('application/theme_layouts/enlight/consumable.jpg') ?>" alt="Consumable Fish" style="opacity: 0.6;">
+            <div class="carousel-caption">
+              <h1 style="font-weight: bold; color: white;">Salmon</h1>
+              <p style="font-weight: bold; font-size:larger;">Salmon are typically anadromous.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Previous/Next controls -->
+        <a class="left carousel-control" href="#my-pics" role="button" data-slide="prev">
+          <span class="icon-prev" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#my-pics" role="button" data-slide="next">
+          <span class="icon-next" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+
+      </div>
+
+
     </section>
 
     <section class="probootstrap-section probootstrap-section-colored">
