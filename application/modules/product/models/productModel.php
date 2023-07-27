@@ -13,6 +13,11 @@ class ProductModel extends CI_Model
         'label' => 'Category',
         'rules' => 'trim|required'
       ],
+	[
+		'field' => 'product_sub_category_id',
+		'label' => 'Sub Category',
+		'rules' => 'trim|required'
+	],
       [
         'field' => 'name',
         'label' => 'Name',
@@ -58,8 +63,8 @@ class ProductModel extends CI_Model
     return $this->db->get_where($this->_tableView, [$where => $value])->row();
   }
 
-  public function getLatest($limit = 6) {
-    return $this->db->order_by('id', 'desc')->limit($limit)->get($this->_tableView)->result();
+  public function getLatest($limit = 6,$category = null) {
+    return $this->db->where('product_category_id',$category)->order_by('id', 'desc')->limit($limit)->get($this->_tableView)->result();
   }
 
   public function insert() {
@@ -75,6 +80,7 @@ class ProductModel extends CI_Model
       $post['sold_out'] = str_replace('.', '', $post['sold_out']);
   
       $this->product_category_id = $post['product_category_id'];
+      $this->product_sub_category_id = $post['product_sub_category_id'];
       $this->name = $post['name'];
       $this->price = $post['price'];
       $this->description = $this->br2nl($post['description']);
@@ -118,6 +124,7 @@ class ProductModel extends CI_Model
       $post['image4'] = (!empty($post['image4'])) ? $post['image4'] : $temp->image4;
   
       $this->product_category_id = $post['product_category_id'];
+	$this->product_sub_category_id = $post['product_sub_category_id'];
       $this->name = $post['name'];
       $this->price = $post['price'];
       $this->description = $this->br2nl($post['description']);
