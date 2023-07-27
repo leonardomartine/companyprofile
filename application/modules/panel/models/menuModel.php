@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class MenuModel extends CI_Model
 {
   private $_table = 'menu';
+  private $_categoryTable = 'product_category';
   private $_tableView = 'view_menu';
 
   public function rules() {
@@ -49,9 +50,27 @@ class MenuModel extends CI_Model
     $data = $this->db->order_by('order_pos', 'asc')->get_where($this->_tableView, ['parent_id' => $parent_id])->result();
 
     foreach ($data as $index => $item) {
-      $item->childs = $this->getRecursive($item->id);
+      if ($item->link == 'product') {
+		  $category = $this->db->get($this->_categoryTable)->result();
+
+		  $item->childs = array_map(function ($item) {
+			  $entity = new stdClass();
+
+			  $entity->id = $item->id;
+			  $entity->name = $item->name;
+			  $entity->link = 'product/'.$item->id;
+			  $entity->link_tobase = 1;
+			  $entity->childs = [];
+
+			  return $entity;
+		  }, $category);
+	  } else {
+		  $item->childs = $this->getRecursive($item->id);
+	  }
       $result[$item->id] = $item;
     };
+
+
 
     return $result;
   }

@@ -190,9 +190,42 @@
       var text = $(this).val().trim();
       var result = text.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-');
           result = result.toLowerCase();
-      
+
       $(".product-link").val(result);
     });
+
+	  $("#"+ _form +" .product-product_category_id").on('change', function () {
+		  var selected = $(this).find(":selected").val();
+
+		  if (selected) {
+			  $.ajax({
+				  type : "GET",
+				  url  : "<?php echo base_url('panel/moduleproduct/ajax_getFiltered_subCategory') ?>",
+				  data: {
+					  category: $(this).find(":selected").val()
+				  },
+				  dataType : "json",
+				  success: function(response) {
+	  				renderSubCategory(response)
+				  }
+			  });
+		  } else {
+			  renderSubCategory([])
+		  }
+	  });
+
+	  renderSubCategory = (items) => {
+		  var element = $("#"+ _form +" .product-product_sub_category_id");
+		  element.val('');
+		  element.html('<option value="">(Empty)</option>');
+
+		  $.each(items, function (i, item) {
+	 		 element.append($('<option>', {
+				  value: item.id,
+				  text : item.name
+			  }));
+		  });
+	  }
 
   });
 </script>

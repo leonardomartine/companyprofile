@@ -11,7 +11,8 @@ class ModuleProduct extends AppBackend
       'ProvincesModel',
       'RegenciesModel',
       '../../product/models/ProductModel',
-      '../../product/models/ProductCategoryModel'
+      '../../product/models/ProductCategoryModel',
+      '../../product/models/ProductSubCategoryModel'
     ]);
     $this->load->library('form_validation');
 	}
@@ -33,6 +34,7 @@ class ModuleProduct extends AppBackend
       'main_js' => $this->load_main_js('moduleProduct'),
       'card_title' => 'Module › Product: Create',
       'data_category' => $this->ProductCategoryModel->getAll(),
+      'data_subcategory' => $this->ProductSubCategoryModel->getAll(),
       'data_provinces' => $this->ProvincesModel->getAll()
 		);
 		$this->template->set('title', 'Module Product: Create | ' . $data['app']->app_name, TRUE);
@@ -48,6 +50,7 @@ class ModuleProduct extends AppBackend
       'card_title' => 'Module › Product: Update',
       'data' => $temp,
       'data_category' => $this->ProductCategoryModel->getAll(),
+		'data_subcategory' => $this->ProductSubCategoryModel->getFiltered($temp->product_category_id),
       'data_provinces' => $this->ProvincesModel->getAll(),
       'data_regencies' => $this->RegenciesModel->getFilter('province_id', $temp->province_id)
 		);
@@ -194,4 +197,78 @@ class ModuleProduct extends AppBackend
     echo json_encode($this->ProductCategoryModel->delete($id));
   }
   // END ## Category
+
+	// Sub Category
+	public function subcategory() {
+		$data = array(
+			'app' => $this->app(),
+			'main_js' => $this->load_main_js('moduleProduct/subcategory'),
+			'card_title' => 'Module › Product › Sub Category',
+			'data_category' => $this->ProductCategoryModel->getAll(),
+		);
+		$this->template->set('title', 'Module Product Sub Category | ' . $data['app']->app_name, TRUE);
+		$this->template->load_view('moduleProduct/subcategory/index', $data, TRUE);
+		$this->template->render();
+	}
+
+	public function ajax_getAll_subcategory() {
+		$this->handle_ajax_request();
+		$dtAjax_config = array(
+			'table_name' => 'product_sub_category',
+			'order_column' => 1
+		);
+		$response = $this->AppModel->getData_dtAjax( $dtAjax_config );
+		echo json_encode( $response );
+	}
+
+	public function ajax_getFiltered_subCategory() {
+		$category    = $_REQUEST['category'];
+
+		$response = $this->ProductSubCategoryModel->getFiltered($category);
+
+		echo json_encode( $response );
+	}
+
+	public function ajax_save_subcategory($id = null) {
+		$this->handle_ajax_request();
+		$this->form_validation->set_rules($this->ProductSubCategoryModel->rules());
+
+		if ($this->form_validation->run() === true) {
+			$_POST['image'] = '';
+
+			$cpUpload = new CpUpload();
+
+			if (isset($_FILES['image']) && !empty($_FILES['image']['name'])) {
+				$upload = $cpUpload->run('image', 'subcategory', true, true, 'jpg|jpeg|png|gif');
+				if ($upload->status === true) {
+					$_POST['image'] = $upload->data->base_path;
+				} else {
+					echo json_encode(array('status' => false, 'data' => 'Image : '.$upload->data));
+					die;
+				}
+			} else {
+				if (empty($_POST['id'])) {
+					echo json_encode(array('status' => false, 'data' => 'The Image field is required.'));
+					die;
+				}
+			};;
+
+			if (is_null($id)) {
+				// Insert
+				echo json_encode($this->ProductSubCategoryModel->insert());
+			} else {
+				// Update
+				echo json_encode($this->ProductSubCategoryModel->update($id));
+			};
+		} else {
+			$errors = validation_errors('<div>- ', '</div>');
+			echo json_encode(array('status' => false, 'data' => $errors));
+		};
+	}
+
+	public function ajax_delete_subcategory($id) {
+		$this->handle_ajax_request();
+		echo json_encode($this->ProductSubCategoryModel->delete($id));
+	}
+	// END ## Sub Category
 }

@@ -77,9 +77,9 @@
                 <a href="<?php echo base_url('panel/page/') ?>"><i class="zmdi zmdi-collection-text"></i> Pages</a>
             </li>
 
-            <li class="<?php echo ($this->router->fetch_class() === 'theme') ? 'navigation__active' : '' ?>">
-                <a href="<?php echo base_url('panel/theme/') ?>"><i class="zmdi zmdi-format-color-fill"></i> Themes</a>
-            </li>
+<!--            <li class="--><?php //echo ($this->router->fetch_class() === 'theme') ? 'navigation__active' : '' ?><!--">-->
+<!--                <a href="--><?php //echo base_url('panel/theme/') ?><!--"><i class="zmdi zmdi-format-color-fill"></i> Themes</a>-->
+<!--            </li>-->
 
             <li class="navigation__sub <?php echo (in_array($this->router->fetch_class(), ['setting'])) ? 'navigation__sub--active navigation__sub--toggled' : '' ?>">
                 <a href=""><i class="zmdi zmdi-settings"></i> Settings</a>

@@ -408,6 +408,7 @@ INSERT INTO `portfolio_tag` (`id`, `name`) VALUES
 CREATE TABLE `product` (
   `id` int(255) NOT NULL,
   `product_category_id` int(255) NOT NULL,
+  `product_sub_category_id` int(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `price` decimal(15,0) NOT NULL,
   `description` mediumtext NOT NULL,
@@ -431,12 +432,12 @@ CREATE TABLE `product` (
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`id`, `product_category_id`, `name`, `price`, `description`, `merk`, `send_from`, `stock`, `sold_out`, `image1`, `image2`, `image3`, `image4`, `link`, `visit_count`, `created_at`, `created_by`, `updated_at`, `updated_by`) VALUES
-(0, 0, 'dada', '2131', 'dadaad', 'adada', 1202, 111, 131, 'directory/product/2a7b8a7b24798ec4ea63574f1df9d98d.jpg', '', '', '', 'dada', 29, '2023-07-17 00:41:38', 1, '2023-07-18 05:19:15', NULL),
-(0, 0, 'adada', '121', 'adadada', 'adada', 1303, 11, 1, 'directory/product/666d4541197d1184b73034d4fa41aea9.jpg', 'directory/product/7a635c7c78d2c973c4498377ace2cf6f.jpg', '', '', 'adada', 29, '2023-07-17 00:46:22', 1, '2023-07-18 05:19:15', NULL),
-(0, 0, 'adadaad', '12', 'adada', 'adad', 1202, 111, 1, 'directory/product/dec08c8df5d80b5cb6a8784557da9492.jpg', '', '', '', 'adadaad', 29, '2023-07-17 00:46:54', 1, '2023-07-18 05:19:15', NULL),
-(0, 0, 'ada', '211', 'adada', 'ad', 1201, 22, 1, 'directory/product/ab991385591d8567cfd646e1857d306a.jpg', '', '', '', 'ada', 29, '2023-07-17 00:47:18', 1, '2023-07-18 05:19:15', NULL),
-(0, 1, 'Cupang Kental', '99000', 'ikan cupang merupakan', 'cupang', 1201, 100, 1, 'directory/product/c4984bef9c5ad80b984f89ddd4ae270f.jpg', '', '', '', 'cupang-kental', 29, '2023-07-18 00:18:17', 1, '2023-07-18 05:19:15', NULL);
+INSERT INTO `product` (`id`, `product_category_id`, `product_sub_category_id`, `name`, `price`, `description`, `merk`, `send_from`, `stock`, `sold_out`, `image1`, `image2`, `image3`, `image4`, `link`, `visit_count`, `created_at`, `created_by`, `updated_at`, `updated_by`) VALUES
+(1, 1, 1, 'dada', '2131', 'dadaad', 'adada', 1202, 111, 131, 'directory/product/2a7b8a7b24798ec4ea63574f1df9d98d.jpg', '', '', '', 'dada', 29, '2023-07-17 00:41:38', 1, '2023-07-18 05:19:15', NULL),
+(2, 1, 2, 'adada', '121', 'adadada', 'adada', 1303, 11, 1, 'directory/product/666d4541197d1184b73034d4fa41aea9.jpg', 'directory/product/7a635c7c78d2c973c4498377ace2cf6f.jpg', '', '', 'adada', 29, '2023-07-17 00:46:22', 1, '2023-07-18 05:19:15', NULL),
+(3, 2, 3, 'adadaad', '12', 'adada', 'adad', 1202, 111, 1, 'directory/product/dec08c8df5d80b5cb6a8784557da9492.jpg', '', '', '', 'adadaad', 29, '2023-07-17 00:46:54', 1, '2023-07-18 05:19:15', NULL),
+(4, 2, 4, 'ada', '211', 'adada', 'ad', 1201, 22, 1, 'directory/product/ab991385591d8567cfd646e1857d306a.jpg', '', '', '', 'ada', 29, '2023-07-17 00:47:18', 1, '2023-07-18 05:19:15', NULL),
+(5, 2, 5, 'Cupang Kental', '99000', 'ikan cupang merupakan', 'cupang', 1201, 100, 1, 'directory/product/c4984bef9c5ad80b984f89ddd4ae270f.jpg', '', '', '', 'cupang-kental', 29, '2023-07-18 00:18:17', 1, '2023-07-18 05:19:15', NULL);
 
 -- --------------------------------------------------------
 
@@ -454,8 +455,33 @@ CREATE TABLE `product_category` (
 --
 
 INSERT INTO `product_category` (`id`, `name`) VALUES
-(0, 'ikan'),
-(1, 'hias');
+(1, 'ikan'),
+(2, 'hias');
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_sub_category`
+--
+
+CREATE TABLE `product_sub_category` (
+  `id` int(255) NOT NULL,
+	`product_category_id` int(255) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `image` varchar(200) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `product_sub_category`
+--
+
+INSERT INTO `product_sub_category` (`id`, `product_category_id`, `name`) VALUES
+(1, 1, 'ikan sub 1'),
+(2, 1, 'ikan sub 2'),
+(3, 2, 'hias sub 1'),
+(4, 2, 'hias sub 2'),
+(5, 2, 'hias sub 3');
 
 -- --------------------------------------------------------
 
@@ -1446,6 +1472,7 @@ CREATE TABLE `view_portfolio` (
 CREATE TABLE `view_product` (
 `id` int(255)
 ,`product_category_id` int(255)
+,`product_sub_category_id` int(255)
 ,`name` varchar(255)
 ,`price` decimal(15,0)
 ,`description` mediumtext
@@ -1599,7 +1626,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `view_product`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_product`  AS  select `p`.`id` AS `id`,`p`.`product_category_id` AS `product_category_id`,`p`.`name` AS `name`,`p`.`price` AS `price`,`p`.`description` AS `description`,`p`.`merk` AS `merk`,`p`.`send_from` AS `send_from`,`p`.`stock` AS `stock`,`p`.`sold_out` AS `sold_out`,`p`.`image1` AS `image1`,`p`.`image2` AS `image2`,`p`.`image3` AS `image3`,`p`.`image4` AS `image4`,`p`.`link` AS `link`,`p`.`visit_count` AS `visit_count`,`p`.`created_at` AS `created_at`,`p`.`created_by` AS `created_by`,`p`.`updated_at` AS `updated_at`,`p`.`updated_by` AS `updated_by`,`r`.`province_id` AS `province_id`,`r`.`name` AS `regencies_name`,`r`.`province_name` AS `province_name` from (`product` `p` left join `view_provinces_regencies` `r` on((`r`.`id` = `p`.`send_from`))) order by `p`.`id` desc ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_product`  AS  select `p`.`id` AS `id`,`p`.`product_category_id` AS `product_category_id`,`p`.`product_sub_category_id` AS `product_sub_category_id`,`p`.`name` AS `name`,`p`.`price` AS `price`,`p`.`description` AS `description`,`p`.`merk` AS `merk`,`p`.`send_from` AS `send_from`,`p`.`stock` AS `stock`,`p`.`sold_out` AS `sold_out`,`p`.`image1` AS `image1`,`p`.`image2` AS `image2`,`p`.`image3` AS `image3`,`p`.`image4` AS `image4`,`p`.`link` AS `link`,`p`.`visit_count` AS `visit_count`,`p`.`created_at` AS `created_at`,`p`.`created_by` AS `created_by`,`p`.`updated_at` AS `updated_at`,`p`.`updated_by` AS `updated_by`,`r`.`province_id` AS `province_id`,`r`.`name` AS `regencies_name`,`r`.`province_name` AS `province_name` from (`product` `p` left join `view_provinces_regencies` `r` on((`r`.`id` = `p`.`send_from`))) order by `p`.`id` desc ;
 
 -- --------------------------------------------------------
 

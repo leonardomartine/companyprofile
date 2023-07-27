@@ -12,6 +12,9 @@
                 <a href="<?php echo base_url('panel/moduleproduct/category/') ?>" class="btn btn--raised btn-success btn--icon-text">
                     Manage Category
                 </a>
+				<a href="<?php echo base_url('panel/moduleproduct/subcategory/') ?>" class="btn btn--raised btn-success btn--icon-text">
+                    Manage Sub Category
+                </a>
             </div>
         </div>
     

@@ -67,11 +67,25 @@
               </table>
               <div class="clearfix"></div>
               <?php if (!empty($app->contact->whatsapp)): ?>
-              <a href="https://wa.me/<?php echo $app->contact->whatsapp ?>?text=Hallo, apakah *<?php echo $data->name ?>* masih tersedia?" target="_blank">
+                <a href="https://wa.me/089685501697" target="_blank">
                 <i class="fa fa-whatsapp"></i>
-                Beli Sekarang
+                Pesan Sekarang
               </a>
               <?php endif; ?>
+              <?php
+            $recipient_email = "business@cahayaabadi.org";
+$subject = "Pesan dari Website";
+$message = "Halo,\n\nTerima kasih telah mengunjungi website kami.";
+?>
+<br>
+<a href="mailto:<?php echo $recipient_email ?>?subject=<?php echo urlencode($subject) ?>&body=<?php echo urlencode($message) ?>" target="_blank">
+  
+  <i class="fa fa-envelope"></i>
+  Lewat email
+</a>
+
+              
+              
             </div>
           </div>
         </div>

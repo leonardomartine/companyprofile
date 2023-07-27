@@ -17,7 +17,7 @@ class App extends MX_Controller
         $this->createStatistic();
     }
 
-	public function app() {
+	public function app($activeModule = null) {
         $appData = $this->SettingModel->getAll();
         $config = array();
         
@@ -28,7 +28,17 @@ class App extends MX_Controller
         };
 
         $activeClass = $this->router->fetch_class();
-        $config['active_module'] = $this->getModule($activeClass);
+        $activeMethod = $this->router->fetch_method();
+        if ($activeClass == 'product' && $activeMethod != 'view') {
+			$module = new stdClass();
+
+			$module->name = $activeModule;
+			$module->is_active = 1;
+
+			$config['active_module'] = $module;
+		} else {
+			$config['active_module'] = $this->getModule($activeClass);
+		}
 
         $contact = json_decode($this->ContactModel->getObject());
         $config['contact'] = $contact;

@@ -30,7 +30,7 @@
           <div class="col-xs-10 col-md-12">
             
             <div class="row">
-              <div class="col-xs-10 col-md-6">
+              	<div class="col-xs-10 col-md-6">
                   <div class="form-group">
                     <label required>Category</label>
                     <div class="select">
@@ -51,24 +51,45 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-xs-10 col-md-6">
-                  <div class="form-group">
-                    <label required>Name</label>
-                    <input
-                      type="text"
-                      name="name"
-                      class="form-control product-name"
-                      placeholder="Name"
-                      maxlength="255"
-                      value="<?php echo (isset($data->name)) ? $data->name : '' ?>"
-                      style="text-transform: capitalize;"
-                    />
-                    <i class="form-group__bar"></i>
-                  </div>
-              </div>
+				<div class="col-xs-10 col-md-6">
+					<div class="form-group">
+						<label required>Sub Category</label>
+						<div class="select">
+							<select name="product_sub_category_id" class="form-control product-product_sub_category_id">
+								<option value="">(Empty)</option>
+								<?php
+								if (count($data_subcategory) > 0) {
+									$subCategory = '';
+									foreach ($data_subcategory as $index => $item) {
+										$selected = (isset($data->product_sub_category_id) && $data->product_sub_category_id == $item->id) ? 'selected' : '';
+										$subCategory .= '<option value="'.$item->id.'" '.$selected.'>'.$item->name.'</option>';
+									};
+									echo $subCategory;
+								};
+								?>
+							</select>
+							<i class="form-group__bar"></i>
+						</div>
+					</div>
+				</div>
             </div>
 
             <div class="row">
+				<div class="col-xs-10 col-md-6">
+					<div class="form-group">
+						<label required>Name</label>
+						<input
+								type="text"
+								name="name"
+								class="form-control product-name"
+								placeholder="Name"
+								maxlength="255"
+								value="<?php echo (isset($data->name)) ? $data->name : '' ?>"
+								style="text-transform: capitalize;"
+						/>
+						<i class="form-group__bar"></i>
+					</div>
+				</div>
               <div class="col-xs-10 col-md-6">
                 <div class="form-group">
                   <label>Merk</label>
@@ -84,27 +105,27 @@
                   <i class="form-group__bar"></i>
                 </div>
               </div>
-              <div class="col-xs-10 col-md-6">
-                <div class="form-group">
-                  <label required>Price</label>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="basic-addon1">Rp</span>
-                    </div>
-                    <input
-                      type="text"
-                      name="price"
-                      class="form-control mask-money product-price"
-                      placeholder="0"
-                      value="<?php echo (isset($data->price)) ? $data->price : '' ?>"
-                    />
-                    <i class="form-group__bar"></i>
-                  </div>
-                </div>
-              </div>
             </div>
 
             <div class="row">
+				<div class="col-xs-10 col-md-6">
+					<div class="form-group">
+						<label required>Price</label>
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="basic-addon1">Rp</span>
+							</div>
+							<input
+									type="text"
+									name="price"
+									class="form-control mask-money product-price"
+									placeholder="0"
+									value="<?php echo (isset($data->price)) ? $data->price : '' ?>"
+							/>
+							<i class="form-group__bar"></i>
+						</div>
+					</div>
+				</div>
               <div class="col-xs-10 col-md-6">
                 <div class="form-group">
                   <label required>Stock</label>
@@ -118,22 +139,22 @@
                   <i class="form-group__bar"></i>
                 </div>
               </div>
-              <div class="col-xs-10 col-md-6">
-                <div class="form-group">
-                  <label>Sold Out</label>
-                  <input
-                    type="text"
-                    name="sold_out"
-                    class="form-control mask-money product-sold_out"
-                    placeholder="0"
-                    value="<?php echo (isset($data->sold_out)) ? $data->sold_out : '' ?>"
-                  />
-                  <i class="form-group__bar"></i>
-                </div>
-              </div>
             </div>
 
             <div class="row">
+				<div class="col-xs-10 col-md-6">
+					<div class="form-group">
+						<label>Sold Out</label>
+						<input
+								type="text"
+								name="sold_out"
+								class="form-control mask-money product-sold_out"
+								placeholder="0"
+								value="<?php echo (isset($data->sold_out)) ? $data->sold_out : '' ?>"
+						/>
+						<i class="form-group__bar"></i>
+					</div>
+				</div>
               <div class="col-xs-10 col-md-6">
                 <div class="form-group">
                   <label required>Province</label>
@@ -152,27 +173,30 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xs-10 col-md-6">
-                <div class="form-group">
-                  <label required>Regency</label>
-                  <div class="form-group">
-                    <select name="send_from" class="select2 product-send_from" data-placeholder="Select a regency">
-                      <option></option>
-                      <?php
-                        if (isset($data_regencies)) {
-                          if (count($data_regencies) > 0) {
-                            foreach ($data_regencies as $index => $item) {
-                              $selected = (isset($data->send_from) && $data->send_from == $item->id) ? 'selected' : '';
-                              echo '<option value="'.$item->id.'" '.$selected.'>'.$item->name.'</option>';
-                            };
-                          };
-                        };
-                      ?>
-                    </select>
-                  </div>
-                </div>
-              </div>
             </div>
+
+			  <div class="row">
+				  <div class="col-xs-10 col-md-6">
+					  <div class="form-group">
+						  <label required>Regency</label>
+						  <div class="form-group">
+							  <select name="send_from" class="select2 product-send_from" data-placeholder="Select a regency">
+								  <option></option>
+								  <?php
+								  if (isset($data_regencies)) {
+									  if (count($data_regencies) > 0) {
+										  foreach ($data_regencies as $index => $item) {
+											  $selected = (isset($data->send_from) && $data->send_from == $item->id) ? 'selected' : '';
+											  echo '<option value="'.$item->id.'" '.$selected.'>'.$item->name.'</option>';
+										  };
+									  };
+								  };
+								  ?>
+							  </select>
+						  </div>
+					  </div>
+				  </div>
+			  </div>
 
             <div class="form-group">
               <label required>Link</label>
