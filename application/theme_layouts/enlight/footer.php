@@ -11,30 +11,27 @@
             <p><?php echo $app->app_description ?></p>
             <h3>Social</h3>
             <ul class="probootstrap-footer-social">
-              <?php if (!empty($app->contact->twitter)): ?>
-              <li><a href="http://twitter.com/<?php echo $app->contact->twitter ?>" target="_blank"><span class="icon-twitter"></span></a></li>
+              <?php if (!empty($app->contact->twitter)) : ?>
+                <li><a href="http://twitter.com/<?php echo $app->contact->twitter ?>" target="_blank"><span class="icon-twitter"></span></a></li>
               <?php endif; ?>
-              <?php if (!empty($app->contact->facebook)): ?>
-              <li><a href="http://facebook.com/<?php echo $app->contact->facebook ?>" target="_blank"><span class="icon-facebook"></span></a></li>
+              <?php if (!empty($app->contact->facebook)) : ?>
+                <li><a href="http://facebook.com/<?php echo $app->contact->facebook ?>" target="_blank"><span class="icon-facebook"></span></a></li>
               <?php endif; ?>
-              <?php if (!empty($app->contact->instagram)): ?>
-              <li><a href="http://instagram.com/<?php echo $app->contact->instagram ?>" target="_blank"><span class="icon-instagram"></span></a></li>
-              <?php endif; ?>
-              <?php if (!empty($app->contact->linkedin)): ?>
-              <li><a href="http://linkedin.com/in/<?php echo $app->contact->linkedin ?>" target="_blank"><span class="icon-linkedin"></span></a></li>
+              <?php if (!empty($app->contact->instagram)) : ?>
+                <li><a href="http://instagram.com/<?php echo $app->contact->instagram ?>" target="_blank"><span class="icon-instagram"></span></a></li>
               <?php endif; ?>
             </ul>
           </div>
         </div>
         <div class="col-md-3 col-md-push-1">
           <div class="probootstrap-footer-widget">
-            <h3>Links</h3>
+            <!-- <h3>Links</h3>
             <ul>
               <li><a href="<?php echo base_url() ?>">Home</a></li>
               <li><a href="<?php echo base_url('page/terms-and-conditions') ?>">Terms and Conditions</a></li>
               <li><a href="<?php echo base_url('page/privacy-policy') ?>">Privacy Policy</a></li>
               <li><a href="<?php echo base_url('page/disclaimer') ?>">Disclaimer</a></li>
-            </ul>
+            </ul> -->
           </div>
         </div>
         <div class="col-md-4">
@@ -55,10 +52,8 @@
         <div class="row">
           <div class="col-md-8 text-left">
             <p>&copy; <?php echo $app->app_name ?>. All Rights Reserved.
-            <br/> Designed &amp; Developed with <i class="icon icon-heart"></i> by <a href="https://probootstrap.com/" target="_blank">ProBootstrap.com</a>
           </div>
           <div class="col-md-4 probootstrap-back-to-top">
-            <p><a href="#" class="js-backtotop">Back to top <i class="icon-arrow-long-up"></i></a></p>
           </div>
         </div>
       </div>
@@ -71,5 +66,6 @@
   <script src="<?php echo base_url('themes/enlight/') ?>vendor/lightbox/js/lightbox.min.js"></script>
   <script src="<?php echo base_url('themes/_public/') ?>js/public.fe.js"></script>
 
-</body>
-</html>
+  </body>
+
+  </html>
