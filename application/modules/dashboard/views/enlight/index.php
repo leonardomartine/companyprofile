@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <section class="probootstrap-section probootstrap-bg-white probootstrap-border-top">
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3 text-center section-heading probootstrap-animate">
@@ -95,7 +97,39 @@
 			<p class="lead">The reason why you have to choose us</p>
 		</div>
 	</div>
-	<?php if (count($data_service) > 0) : ?>
+
+	<div class="row">
+		<div class="col-md-4" style="text-align: center;">
+			<i class="fa fa-shield" style="font-size:60px;color:#4E97D1;"></i>
+			<h3>Integrity</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consectetur orci ac sem sollicitudin, sit amet tincidunt ipsum luctus. Duis euismod nulla vitae ante posuere, nec lacinia ante elementum. Quisque lobortis mattis nisi, eu ullamcorper lorem maximus ac. Suspendisse rutrum vestibulum est, at sollicitudin arcu volutpat eget.</p>
+		</div>
+		<div class="col-md-4" style="text-align: center;">
+			<i class="fa fa-trophy" style="font-size:60px;color:#4E97D1;"></i>
+			<h3>Quality</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consectetur orci ac sem sollicitudin, sit amet tincidunt ipsum luctus. Duis euismod nulla vitae ante posuere, nec lacinia ante elementum. Quisque lobortis mattis nisi, eu ullamcorper lorem maximus ac. Suspendisse rutrum vestibulum est, at sollicitudin arcu volutpat eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consectetur orci ac sem sollicitudin, sit amet tincidunt ipsum luctus. Duis euismod nulla vitae ante posuere, nec lacinia ante elementum. Quisque lobortis mattis nisi, eu ullamcorper lorem maximus ac. Suspendisse rutrum vestibulum est, at sollicitudin arcu volutpat eget.</p>
+		</div>
+		<div class="col-md-4" style="text-align: center;">
+			<i class="fa fa-handshake-o" style="font-size:60px;color:#4E97D1;"></i>
+			<h3>Commitment</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consectetur orci ac sem sollicitudin, sit amet tincidunt ipsum luctus. Duis euismod nulla vitae ante posuere, nec lacinia ante elementum. Quisque lobortis mattis nisi, eu ullamcorper lorem maximus ac. Suspendisse rutrum vestibulum est, at sollicitudin arcu volutpat eget.</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4" style="text-align: center;">
+			<i class="fa fa-lightbulb-o" style="font-size:60px;color:#4E97D1;"></i>
+			<h3>Innovation</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consectetur orci ac sem sollicitudin, sit amet tincidunt ipsum luctus. Duis euismod nulla vitae ante posuere, nec lacinia ante elementum. Quisque lobortis mattis nisi, eu ullamcorper lorem maximus ac. Suspendisse rutrum vestibulum est, at sollicitudin arcu volutpat eget.</p>
+		</div>
+		<div class="col-md-4" style="text-align: center;">
+			<h3></h3>
+		</div>
+		<div class="col-md-4" style="text-align: center;">
+			<h3></h3>
+		</div>
+	</div>
+
+	<!-- <?php if (count($data_service) > 0) : ?>
 		<div class="row">
 			<?php foreach ($data_service as $item) : ?>
 				<div class="col-md-4">
@@ -113,5 +147,7 @@
 		<div class="nothing-found">
 			<div>No data found</div>
 		</div>
-	<?php endif; ?>
+	<?php endif; ?> -->
 </section>
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>

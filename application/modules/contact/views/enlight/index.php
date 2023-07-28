@@ -11,11 +11,11 @@
         <td valign="top" style="padding: 0px 10px 0px 10px"><i class="fa fa-envelope-o"></i></td>
         <td valign="top" width="80%"><?php echo $data->email ?></td>
       </tr>
-      <tr>
+      <!-- <tr>
         <th valign="top" style="text-align:right" width="30%">Phone</th>
         <td valign="top" style="padding: 0px 10px 0px 10px"><i class="fa fa-phone"></i></td>
         <td valign="top" width="80%"><?php echo $data->phone ?></td>
-      </tr>
+      </tr> -->
       <?php if (!empty($data->whatsapp)) : ?>
         <tr>
           <th valign="top" style="text-align:right" width="30%">Whatsapp</th>
@@ -60,13 +60,13 @@
           </td>
         </tr>
       <?php endif; ?>
-      <?php if (!empty($data->linkedin)) : ?>
+      <?php if (!empty($data->tiktok)) : ?>
         <tr>
-          <th valign="top" style="text-align:right" width="30%">LinkedIn</th>
+          <th valign="top" style="text-align:right" width="30%">Tiktok</th>
           <td valign="top" style="padding: 0px 10px 0px 10px"><i class="fa fa-linkedin"></i></td>
           <td valign="top" width="80%">
-            <a href="http://linkedin.com/in/<?php echo $data->linkedin ?>" target="_blank">
-              <?php echo $data->linkedin ?>
+            <a href="https://www.tiktok.com/<?php echo $data->tiktok ?>" target="_blank">
+              <?php echo $data->tiktok ?>
             </a>
           </td>
         </tr>
@@ -78,7 +78,7 @@
           <?php echo $data->address ?>
         </td>
       </tr>
-      <tr>
+      <!-- <tr>
         <th valign="top" style="text-align:right" width="30%">Office Hours</th>
         <td valign="top" style="padding: 0px 10px 0px 10px"><i class="fa fa-clock-o"></i></td>
         <td valign="top" width="80%">
@@ -99,7 +99,7 @@
             ?>
           </table>
         </td>
-      </tr>
+      </tr> -->
     </table>
   </div>
 </div>

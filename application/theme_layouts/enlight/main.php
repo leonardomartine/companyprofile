@@ -48,7 +48,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" style="background: url('<?php echo base_url('themes/_public/img/cpsmi-2.png') ?>') no-repeat; background-size: 123px; height: 63px;" href="<?php echo base_url() ?>">CPSMI</a>
+        <a class="navbar-brand" style="background: url('<?php echo base_url('themes/_public/img/logo.png') ?>') no-repeat; background-size: 50px; height: 50px;" href="<?php echo base_url() ?>">CPSMI</a>
       </div>
 
       <div id="navbar-collapse" class="navbar-collapse collapse">
@@ -174,7 +174,7 @@
           <div class="card border-success mx-sm-1 p-3">
             <div class="card border-success shadow text-success p-3 my-card"><span class="fa fa-eye" aria-hidden="true"></span></div>
             <div class="text-success text-center mt-3">
-              <h4>Eyes</h4>
+              <h4>Exported Country</h4>
             </div>
             <div class="text-success text-center mt-2">
               <h1 id="counter2">0</h1>
@@ -185,10 +185,10 @@
           <div class="card border-danger mx-sm-1 p-3">
             <div class="card border-danger shadow text-danger p-3 my-card"><span class="fa fa-heart" aria-hidden="true"></span></div>
             <div class="text-danger text-center mt-3">
-              <h4>Hearts</h4>
+              <h4>Lively Products</h4>
             </div>
             <div class="text-danger text-center mt-2">
-              <h1 id="counter3">0</h1>
+              <h1 id="counter3">0%</h1>
             </div>
           </div>
         </div>
@@ -314,7 +314,7 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    const targetNumber = 234;
+    const targetNumber = 47;
 
     const animationDuration = 2000;
 
@@ -345,7 +345,7 @@
 
 
   document.addEventListener("DOMContentLoaded", function() {
-    const targetNumber = 250;
+    const targetNumber = 13;
 
     const animationDuration = 2000;
 
@@ -375,35 +375,30 @@
   });
 
 
+  // JavaScript code to handle the counting animation
   document.addEventListener("DOMContentLoaded", function() {
-    const targetNumber = 134;
+    const percentageContainer = document.getElementById("counter3");
+    const targetPercentage = 97; // Replace this with your desired target percentage
+    const duration = 2000; // Duration in milliseconds for the animation
 
-    const animationDuration = 2000;
+    let currentPercentage = 0;
+    let startTime = null;
 
-    const increment = targetNumber / (animationDuration / 100);
+    function animateCount(timestamp) {
+      if (!startTime) startTime = timestamp;
+      const progress = timestamp - startTime;
+      const percentage = Math.min(Math.ceil(progress / duration * targetPercentage), targetPercentage);
+      currentPercentage = percentage;
+      percentageContainer.innerText = currentPercentage + "%";
 
-    const counterElement = document.getElementById("counter3");
-
-    function updateCounter(currentNumber) {
-      counterElement.innerText = Math.floor(currentNumber);
+      if (progress < duration) {
+        requestAnimationFrame(animateCount);
+      }
     }
 
-    function startAnimation() {
-      let currentNumber = 0;
-
-      const animationInterval = setInterval(() => {
-        currentNumber += increment;
-        updateCounter(currentNumber);
-
-        if (currentNumber >= targetNumber) {
-          clearInterval(animationInterval);
-          updateCounter(targetNumber); // Ensure the final number is exact
-        }
-      }, 80); // Update the number every 100 milliseconds
-    }
-
-    startAnimation();
+    requestAnimationFrame(animateCount);
   });
+
 
 
 
