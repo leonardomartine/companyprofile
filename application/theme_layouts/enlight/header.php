@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <title>{title}</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="<?php echo $app->app_keyword ?>" name="keywords">
-  <meta content="<?php echo $app->app_description ?>" name="description">
+  <!-- <meta content="<?php echo $app->app_keyword ?>" name="keywords">
+  <meta content="<?php echo $app->app_description ?>" name="description"> -->
 
   <!-- Favicons -->
   <link rel="shortcut icon" href="<?php echo base_url($app->app_favicon) ?>" type="image/x-icon">
