@@ -150,4 +150,56 @@
 	<?php endif; ?> -->
 </section>
 
+<section class="probootstrap-section">
+	<hr class="probootstrap-animate" style="background-color: black; height:1px">
+</section>
+
+<section class="probootstrap-section" style="padding-bottom: 0px;">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3 text-center section-heading probootstrap-animate">
+			<h2>Our Business Partner</h2>
+			<p class="lead">The reason why you have to choose us</p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-3" style="text-align: center;">
+			<img src="<?php echo base_url('themes/_public/img/company.png') ?>" alt="" width="60" height="60">
+			<h3>Company A</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consectetur orci ac sem sollicitudin, sit amet tincidunt ipsum luctus. Duis euismod nulla vitae ante posuere, nec lacinia ante elementum. Quisque lobortis mattis nisi, eu ullamcorper lorem maximus ac. Suspendisse rutrum vestibulum est, at sollicitudin arcu volutpat eget.</p>
+		</div>
+		<div class="col-md-3" style="text-align: center;">
+			<img src="<?php echo base_url('themes/_public/img/company.png') ?>" alt="" width="60" height="60">
+			<h3>Company B</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consectetur orci ac sem sollicitudin, sit amet tincidunt ipsum luctus. Duis euismod nulla vitae ante posuere, nec lacinia ante elementum. Quisque lobortis mattis nisi, eu ullamcorper lorem maximus ac. Suspendisse rutrum vestibulum est, at sollicitudin arcu volutpat eget.</p>
+		</div>
+		<div class="col-md-3" style="text-align: center;">
+			<img src="<?php echo base_url('themes/_public/img/company.png') ?>" alt="" width="60" height="60">
+			<h3>Company C</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consectetur orci ac sem sollicitudin, sit amet tincidunt ipsum luctus. Duis euismod nulla vitae ante posuere, nec lacinia ante elementum. Quisque lobortis mattis nisi, eu ullamcorper lorem maximus ac. Suspendisse rutrum vestibulum est, at sollicitudin arcu volutpat eget.</p>
+		</div>
+		<div class="col-md-3" style="text-align: center;">
+			<img src="<?php echo base_url('themes/_public/img/company.png') ?>" alt="" width="60" height="60">
+			<h3>Company D</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consectetur orci ac sem sollicitudin, sit amet tincidunt ipsum luctus. Duis euismod nulla vitae ante posuere, nec lacinia ante elementum. Quisque lobortis mattis nisi, eu ullamcorper lorem maximus ac. Suspendisse rutrum vestibulum est, at sollicitudin arcu volutpat eget.</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3" style="text-align: center;">
+			<img src="<?php echo base_url('themes/_public/img/company.png') ?>" alt="" width="60" height="60">
+			<h3>Company D</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consectetur orci ac sem sollicitudin, sit amet tincidunt ipsum luctus. Duis euismod nulla vitae ante posuere, nec lacinia ante elementum. Quisque lobortis mattis nisi, eu ullamcorper lorem maximus ac. Suspendisse rutrum vestibulum est, at sollicitudin arcu volutpat eget.</p>
+		</div>
+		<div class="col-md-3" style="text-align: center;">
+			<h3></h3>
+		</div>
+		<div class="col-md-3" style="text-align: center;">
+			<h3></h3>
+		</div>
+		<div class="col-md-3" style="text-align: center;">
+			<h3></h3>
+		</div>
+	</div>
+</section>
+
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
