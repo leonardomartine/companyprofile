@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 28, 2023 at 10:38 AM
+-- Generation Time: Jul 28, 2023 at 11:13 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 5.6.40
 
@@ -1110,7 +1110,7 @@ CREATE TABLE `setting` (
 --
 
 INSERT INTO `setting` (`id`, `data`, `content`) VALUES
-(1, 'app_name', 'CPSMI'),
+(1, 'app_name', 'Cahaya Abadi'),
 (2, 'app_version', '1.0'),
 (3, 'template_frontend', 'enlight'),
 (4, 'template_backend', 'material_admin'),
@@ -1123,7 +1123,7 @@ INSERT INTO `setting` (`id`, `data`, `content`) VALUES
 (11, 'smtp_mailtype', 'html'),
 (12, 'smtp_charset', 'iso-8859-1'),
 (13, 'smtp_crypto', 'ssl'),
-(14, 'app_description', 'Universal company profile, read most article from Blog. You can find awesome product in list. The real testimonial!'),
+(14, 'app_description', 'We offer solutions to Aqua\r\nManufacturing and Aqua Hobbyists\r\nacross various regions in the\r\ncountry. Ensuring customer\r\nsatisfaction through Qual ity\r\nAssurance, we cater to both large\r\nand smal l quantity purchases.\r\nFounded in 2000, our company has\r\nbranches in Tangerang and Cirebon.'),
 (15, 'app_slogan', 'Best solution for your business.'),
 (16, 'app_keyword', 'cpsmi, company profile, company profile universal, universal, website, aplikasi'),
 (17, 'app_favicon', 'directory/app/f030b95a93db4d774d0d7fccd4851d25.png');
@@ -1590,7 +1590,56 @@ INSERT INTO `statistic` (`id`, `controller`, `url`, `ip`, `agent`, `os`, `region
 (437, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:29:01'),
 (438, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:29:05'),
 (439, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:29:51'),
-(440, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:30:14');
+(440, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:30:14'),
+(441, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:40:44'),
+(442, 'product', 'http://localhost/companyprofile/product/1', '::1', 'Safari 604.1', 'iOS', NULL, '2023-07-28 08:40:57'),
+(443, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Safari 604.1', 'iOS', NULL, '2023-07-28 08:40:57'),
+(444, 'product', 'http://localhost/companyprofile/product/2', '::1', 'Safari 604.1', 'iOS', NULL, '2023-07-28 08:41:01'),
+(445, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Safari 604.1', 'iOS', NULL, '2023-07-28 08:41:02'),
+(446, 'product', 'http://localhost/companyprofile/product/0', '::1', 'Safari 604.1', 'iOS', NULL, '2023-07-28 08:41:07'),
+(447, 'service', 'http://localhost/companyprofile/service', '::1', 'Safari 604.1', 'iOS', NULL, '2023-07-28 08:41:14'),
+(448, 'faq', 'http://localhost/companyprofile/faq', '::1', 'Safari 604.1', 'iOS', NULL, '2023-07-28 08:41:54'),
+(449, 'blog', 'http://localhost/companyprofile/blog', '::1', 'Safari 604.1', 'iOS', NULL, '2023-07-28 08:42:03'),
+(450, 'contact', 'http://localhost/companyprofile/contact', '::1', 'Safari 604.1', 'iOS', NULL, '2023-07-28 08:42:08'),
+(451, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Safari 604.1', 'iOS', NULL, '2023-07-28 08:42:15'),
+(452, 'service', 'http://localhost/companyprofile/service', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:42:38'),
+(453, 'service', 'http://localhost/companyprofile/service', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:43:03'),
+(454, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:43:13'),
+(455, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:44:38'),
+(456, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:46:18'),
+(457, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:46:37'),
+(458, 'career', 'http://localhost/companyprofile/career', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:47:01'),
+(459, 'testimonial', 'http://localhost/companyprofile/testimonial', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:47:03'),
+(460, 'visimisi', 'http://localhost/companyprofile/visimisi', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:47:06'),
+(461, 'portfolio', 'http://localhost/companyprofile/portfolio', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:47:09'),
+(462, 'service', 'http://localhost/companyprofile/service', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:47:11'),
+(463, 'contact', 'http://localhost/companyprofile/contact', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:47:13'),
+(464, 'contact', 'http://localhost/companyprofile/contact', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:48:02'),
+(465, 'contact', 'http://localhost/companyprofile/contact', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:48:15'),
+(466, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:48:19'),
+(467, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:50:59'),
+(468, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:51:09'),
+(469, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:52:05'),
+(470, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:52:18'),
+(471, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:52:33'),
+(472, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:52:39'),
+(473, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:52:52'),
+(474, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:53:00'),
+(475, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:53:49'),
+(476, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:54:16'),
+(477, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:54:36'),
+(478, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:54:56'),
+(479, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:55:00'),
+(480, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:55:18'),
+(481, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:55:24'),
+(482, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:55:44'),
+(483, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:56:36'),
+(484, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:57:17'),
+(485, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:57:59'),
+(486, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:58:13'),
+(487, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:58:20'),
+(488, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:58:39'),
+(489, 'dashboard', 'http://localhost/companyprofile/', '::1', 'Chrome 114.0.0.0', 'Windows 10', NULL, '2023-07-28 08:59:24');
 
 -- --------------------------------------------------------
 
@@ -2076,7 +2125,7 @@ ALTER TABLE `setting`
 -- AUTO_INCREMENT for table `statistic`
 --
 ALTER TABLE `statistic`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=441;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=490;
 
 --
 -- AUTO_INCREMENT for table `testimonial`
