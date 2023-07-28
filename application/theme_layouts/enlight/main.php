@@ -52,7 +52,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" style="background: url('<?php echo base_url('themes/_public/img/logo.png') ?>') no-repeat; background-size: 50px; height: 50px;" href="<?php echo base_url() ?>">CPSMI</a>
+        <a class="navbar-brand" style="background: url('<?php echo base_url('themes/_public/img/logo.png') ?>') no-repeat; background-size: 50px; height: 50px;" href="<?php echo base_url() ?>">CAHAYA ABADI</a>
       </div>
 
       <div id="navbar-collapse" class="navbar-collapse collapse">

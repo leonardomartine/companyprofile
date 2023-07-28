@@ -66,13 +66,8 @@
                 </tr>
               </table>
               <div class="clearfix"></div>
-              <?php if (!empty($app->contact->whatsapp)): ?>
-                <a href="https://wa.me/089685501697" target="_blank">
-                <i class="fa fa-whatsapp"></i>
-                Pesan Sekarang
-              </a>
-              <?php endif; ?>
-              <?php
+              <a href="https://wa.me/<?php echo htmlspecialchars($app->contact->whatsapp); ?>" target="_blank">
+
             $recipient_email = "business@cahayaabadi.org";
 $subject = "Pesan dari Website";
 $message = "Halo,\n\nTerima kasih telah mengunjungi website kami.";

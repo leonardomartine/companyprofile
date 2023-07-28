@@ -41,15 +41,18 @@
 
         /* Styles for the modal overlay */
         .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            animation: fadeIn 0.3s;
-        }
+       
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        animation: fadeIn 0.3s;
+        z-index: 1; /* Add this line to ensure the overlay is above other elements */
+    }
+
 
         /* Styles for the modal content */
         .modal-content {
@@ -61,6 +64,9 @@
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            display: none; /* Add this line to initially hide the modals */
+        z-index: 2; /* Add this line to ensure the modal content is above the overlay */
+    
         }
 
         /* Styles for the modal button */
@@ -167,24 +173,137 @@
     </div>
 
     <!-- Your modal and JavaScript code -->
-    <div class="modal-overlay" id="modalOverlay">
-        <!-- Add your modal content here -->
-        <!-- Add modals for each card with unique IDs -->
+  <!-- ... (previous HTML code) ... -->
+<!-- Your modal and JavaScript code -->
+<div class="modal-overlay" id="modalOverlay">
+    <!-- Modal content for the first card (INQUIRY Modal) -->
+    <div class="modal-content" id="modal-0">
+        <h2 class="modal-title">INQUIRY Modal</h2>
+        <div class="modal-body">
+            <p>If you have any inquiries, please feel free to contact us through the following methods:</p>
+            <ul>
+                <li>Email: inquiry@example.com</li>
+                <li>Phone: +1 (123) 456-7890</li>
+                <li>Address: 123 Inquiry Street, City, Country</li>
+            </ul>
+        </div>
+        <div class="close-button-container">
+            <button class="modal-close-btn closeModalBtn">Close</button>
+        </div>
     </div>
 
-    <script>
-        // JavaScript to handle the modal functionality
-        const openModalBtns = document.querySelectorAll('.openModalBtn');
-        const modalOverlay = document.getElementById('modalOverlay');
+    <!-- Modal content for the second card (QUOTATION Modal) -->
+    <div class="modal-content" id="modal-1">
+        <h2 class="modal-title">QUOTATION Modal</h2>
+        <div class="modal-body">
+            <p>If you need a quotation, you can request one by providing the following details:</p>
+            <ul>
+                <li>Product Name/Code</li>
+                <li>Quantity</li>
+                <li>Delivery Address</li>
+                <li>Contact Information</li>
+            </ul>
+            <p>Our team will respond to your quotation request within 24 hours.</p>
+        </div>
+        <div class="close-button-container">
+            <button class="modal-close-btn closeModalBtn">Close</button>
+        </div>
+    </div>
 
-        openModalBtns.forEach((btn) => {
-            btn.addEventListener('click', () => {
-                const modalId = btn.getAttribute('data-modal');
-                const modal = document.getElementById(modalId);
-                modalOverlay.style.display = 'block';
-                modal.style.display = 'block';
-            });
+    <!-- Modal content for the third card (PRE-ORDER Modal) -->
+    <div class="modal-content" id="modal-2">
+        <h2 class="modal-title">PRE-ORDER Modal</h2>
+        <div class="modal-body">
+            <p>Thank you for your interest in our upcoming products.</p>
+            <p>To pre-order, please provide the following details:</p>
+            <ul>
+                <li>Product Name/Code</li>
+                <li>Quantity</li>
+                <li>Expected Delivery Date</li>
+                <li>Contact Information</li>
+            </ul>
+            <p>Pre-orders are subject to availability and will be fulfilled on a first-come, first-served basis.</p>
+        </div>
+        <div class="close-button-container">
+            <button class="modal-close-btn closeModalBtn">Close</button>
+        </div>
+    </div>
+
+    <!-- Modal content for the fourth card (PAYMENT Modal) -->
+    <div class="modal-content" id="modal-3">
+        <h2 class="modal-title">PAYMENT Modal</h2>
+        <div class="modal-body">
+            <p>We accept the following payment methods:</p>
+            <ul>
+                <li>Credit Card</li>
+                <li>PayPal</li>
+                <li>Bank Transfer</li>
+            </ul>
+            <p>Please contact our support team if you have any payment-related questions.</p>
+        </div>
+        <div class="close-button-container">
+            <button class="modal-close-btn closeModalBtn">Close</button>
+        </div>
+    </div>
+
+    <!-- Modal content for the fifth card (SHIPMENT Modal) -->
+    <div class="modal-content" id="modal-4">
+        <h2 class="modal-title">SHIPMENT Modal</h2>
+        <div class="modal-body">
+            <p>We offer worldwide shipping with various delivery options:</p>
+            <ul>
+                <li>Standard Shipping (5-10 business days)</li>
+                <li>Express Shipping (2-5 business days)</li>
+                <li>Free Shipping for orders over $50</li>
+            </ul>
+            <p>Contact us if you have any questions about the shipment of your order.</p>
+        </div>
+        <div class="close-button-container">
+            <button class="modal-close-btn closeModalBtn">Close</button>
+        </div>
+    </div>
+
+    <!-- Modal content for the sixth card (AFTER SALES Modal) -->
+    <div class="modal-content" id="modal-5">
+        <h2 class="modal-title">AFTER SALES Modal</h2>
+        <div class="modal-body">
+            <p>If you need any assistance after making a purchase, we are here to help.</p>
+            <p>Contact our support team with your order details for any after-sales support or issues.</p>
+        </div>
+        <div class="close-button-container">
+            <button class="modal-close-btn closeModalBtn">Close</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // JavaScript to handle the modal functionality
+    const openModalBtns = document.querySelectorAll('.openModalBtn');
+    const closeModalBtns = document.querySelectorAll('.modal-close-btn');
+    const modalOverlay = document.getElementById('modalOverlay');
+    const modalContents = modalOverlay.querySelectorAll('.modal-content');
+
+    openModalBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const modalId = btn.getAttribute('data-modal');
+            const modal = document.getElementById(modalId);
+            modalOverlay.style.display = 'block'; // Show the modal overlay
+            modal.style.display = 'block'; // Show the clicked modal
         });
-    </script>
+    });
+
+    closeModalBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const modal = btn.closest('.modal-content');
+            modal.style.display = 'none'; // Hide the clicked modal
+            modalOverlay.style.display = 'none'; // Hide the modal overlay
+        });
+    });
+</script>
 </body>
 </html>
+
+
+
+
+

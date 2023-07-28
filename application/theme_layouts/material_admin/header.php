@@ -6,8 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Favicons -->
-        <link rel="shortcut icon" href="<?php echo base_url($app->app_favicon) ?>" type="image/x-icon">
-        <link rel="icon" href="<?php echo base_url($app->app_favicon) ?>" type="image/x-icon">
+
 
         <!-- Vendor styles -->
         <link rel="stylesheet" href="<?php echo base_url('themes/material_admin/vendors/material-design-iconic-font/css/material-design-iconic-font.min.css') ?>">

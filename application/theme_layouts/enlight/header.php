@@ -8,8 +8,8 @@
   <meta content="<?php echo $app->app_description ?>" name="description"> -->
 
   <!-- Favicons -->
-  <link rel="shortcut icon" href="<?php echo base_url($app->app_favicon) ?>" type="image/x-icon">
-  <link rel="icon" href="<?php echo base_url($app->app_favicon) ?>" type="image/x-icon">
+  <link rel="icon" href="themes/_public/img/logo.png" type="image/png">
+
 
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700%7COpen+Sans" rel="stylesheet">
   <link rel="stylesheet" href="<?php echo base_url('themes/enlight/') ?>css/styles-merged.css">
