@@ -5,6 +5,10 @@
     top: -20px;
     border-radius: 50%;
   }
+
+  body {
+    overflow-x: hidden;
+  }
 </style>
 
 <?php include_once('header.php') ?>
