@@ -1,3 +1,12 @@
+<style>
+  .my-card {
+    position: absolute;
+    left: 40%;
+    top: -20px;
+    border-radius: 50%;
+  }
+</style>
+
 <?php include_once('header.php') ?>
 
 <div class="probootstrap-page-wrapper">
@@ -88,20 +97,7 @@
   </nav>
 
   <?php if (in_array($this->router->fetch_class(), ['dashboard'])) : ?>
-    <section class="flexslider">
-      <!-- <ul class="slides">
-        <li style="background-image: url('<?php echo base_url($data->background_image) ?>')" class="overlay">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-8 col-md-offset-2">
-                <div class="probootstrap-slider-text text-center">
-                  <h1 class="probootstrap-heading probootstrap-animate"><?php echo $data->intro ?></h1>
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
-      </ul> -->
+    <section>
 
       <!-- Carousel container -->
       <div id="my-pics" class="carousel slide" data-ride="carousel" style="width:max-width;margin:auto;">
@@ -160,6 +156,56 @@
 
     </section>
 
+    <!-- counter -->
+    <div class="jumbotron" style="background-color: white;">
+      <div class="row w-100">
+        <div class="col-md-3">
+          <div class="card border-info mx-sm-1 p-3">
+            <div class="card border-info shadow text-info p-3 my-card"><span class="fa fa-car" aria-hidden="true"></span></div>
+            <div class="text-info text-center mt-3">
+              <h4>Customers</h4>
+            </div>
+            <div class="text-info text-center mt-2">
+              <h1 id="counter">0</h1>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card border-success mx-sm-1 p-3">
+            <div class="card border-success shadow text-success p-3 my-card"><span class="fa fa-eye" aria-hidden="true"></span></div>
+            <div class="text-success text-center mt-3">
+              <h4>Eyes</h4>
+            </div>
+            <div class="text-success text-center mt-2">
+              <h1 id="counter2">0</h1>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card border-danger mx-sm-1 p-3">
+            <div class="card border-danger shadow text-danger p-3 my-card"><span class="fa fa-heart" aria-hidden="true"></span></div>
+            <div class="text-danger text-center mt-3">
+              <h4>Hearts</h4>
+            </div>
+            <div class="text-danger text-center mt-2">
+              <h1 id="counter3">0</h1>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card border-warning mx-sm-1 p-3">
+            <div class="card border-warning shadow text-warning p-3 my-card"><span class="fa fa-inbox" aria-hidden="true"></span></div>
+            <div class="text-warning text-center mt-3">
+              <h4>Inbox</h4>
+            </div>
+            <div class="text-warning text-center mt-2">
+              <h1 id="counter4">0</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <section class="probootstrap-section probootstrap-section-colored">
       <div class="container">
         <div class="row">
@@ -180,7 +226,8 @@
                 <p><?php echo $app->app_description ?></p>
                 <p><a href="<?php echo base_url('about') ?>" class="btn btn-primary">Learn More</a></p>
               </div>
-              <div class="probootstrap-image probootstrap-animate" style="background-image: url('<?php echo $data->intro_image ?>')"></div>
+              <div class="probootstrap-image probootstrap-animate" style="background-image: url('<?php echo $data->intro_image ?>')">
+              </div>
             </div>
           </div>
         </div>
@@ -264,3 +311,129 @@
 </div>
 
 <?php include_once('footer.php') ?>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const targetNumber = 234;
+
+    const animationDuration = 2000;
+
+    const increment = targetNumber / (animationDuration / 100);
+
+    const counterElement = document.getElementById("counter");
+
+    function updateCounter(currentNumber) {
+      counterElement.innerText = Math.floor(currentNumber);
+    }
+
+    function startAnimation() {
+      let currentNumber = 0;
+
+      const animationInterval = setInterval(() => {
+        currentNumber += increment;
+        updateCounter(currentNumber);
+
+        if (currentNumber >= targetNumber) {
+          clearInterval(animationInterval);
+          updateCounter(targetNumber); // Ensure the final number is exact
+        }
+      }, 80); // Update the number every 100 milliseconds
+    }
+
+    startAnimation();
+  });
+
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const targetNumber = 250;
+
+    const animationDuration = 2000;
+
+    const increment = targetNumber / (animationDuration / 100);
+
+    const counterElement = document.getElementById("counter2");
+
+    function updateCounter(currentNumber) {
+      counterElement.innerText = Math.floor(currentNumber);
+    }
+
+    function startAnimation() {
+      let currentNumber = 0;
+
+      const animationInterval = setInterval(() => {
+        currentNumber += increment;
+        updateCounter(currentNumber);
+
+        if (currentNumber >= targetNumber) {
+          clearInterval(animationInterval);
+          updateCounter(targetNumber); // Ensure the final number is exact
+        }
+      }, 80); // Update the number every 100 milliseconds
+    }
+
+    startAnimation();
+  });
+
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const targetNumber = 134;
+
+    const animationDuration = 2000;
+
+    const increment = targetNumber / (animationDuration / 100);
+
+    const counterElement = document.getElementById("counter3");
+
+    function updateCounter(currentNumber) {
+      counterElement.innerText = Math.floor(currentNumber);
+    }
+
+    function startAnimation() {
+      let currentNumber = 0;
+
+      const animationInterval = setInterval(() => {
+        currentNumber += increment;
+        updateCounter(currentNumber);
+
+        if (currentNumber >= targetNumber) {
+          clearInterval(animationInterval);
+          updateCounter(targetNumber); // Ensure the final number is exact
+        }
+      }, 80); // Update the number every 100 milliseconds
+    }
+
+    startAnimation();
+  });
+
+
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const targetNumber = 434;
+
+    const animationDuration = 2000;
+
+    const increment = targetNumber / (animationDuration / 100);
+
+    const counterElement = document.getElementById("counter4");
+
+    function updateCounter(currentNumber) {
+      counterElement.innerText = Math.floor(currentNumber);
+    }
+
+    function startAnimation() {
+      let currentNumber = 0;
+
+      const animationInterval = setInterval(() => {
+        currentNumber += increment;
+        updateCounter(currentNumber);
+
+        if (currentNumber >= targetNumber) {
+          clearInterval(animationInterval);
+          updateCounter(targetNumber); // Ensure the final number is exact
+        }
+      }, 80); // Update the number every 100 milliseconds
+    }
+
+    startAnimation();
+  });
+</script>
