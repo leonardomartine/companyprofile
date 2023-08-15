@@ -8,9 +8,64 @@
     white-space: normal;
     height: 45px;
   }
+
+  .card-panel {
+    margin-bottom: 20px;
+    position: relative;
+    /* Add position relative to the panel */
+  }
+
+  .card-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .panel-heading {
+    padding: 0;
+    /* Remove default padding to make room for the image */
+  }
+
+  .panel-heading .panel-title {
+    padding: 10px;
+    /* Add padding to the panel title for spacing */
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    /* Add some margin to separate the span and the button */
+  }
+
+  .stock-info {
+    font-size: 12px;
+    float: left;
+  }
+
+  .custom-btn {
+    font-size: 12px;
+    float: right;
+    background-color: transparent;
+    /* Set background color to transparent */
+    padding: 5px 10px;
+    border: 1px solid green;
+    /* Add a border */
+    border-radius: 4px;
+    text-decoration: none;
+    transition: border-color 0.3s;
+    border-radius: 20px;
+    /* Add a smooth transition effect for border color */
+  }
+
+  .custom-btn:hover {
+    background-color: green;
+    color: white;
+    /* Change the border color on hover */
+  }
 </style>
 
-<section class="probootstrap-section" style="padding-top: 0px; padding-bottom: 0px;">
+<!-- <section class="probootstrap-section" style="padding-top: 0px; padding-bottom: 0px;">
   <?php if (count($data) > 0) : ?>
     <div class="row">
       <?php foreach ($data as $item) : ?>
@@ -27,6 +82,45 @@
               </div>
             </div>
           </a>
+        </div>
+      <?php endforeach; ?>
+    </div>
+  <?php else : ?>
+    <div class="nothing-found">
+      <div>No data found</div>
+    </div>
+  <?php endif; ?>
+
+  <div class="text-center probootstrap-animate">
+    <?php echo $pagination ?>
+  </div>
+</section> -->
+
+<section class="probootstrap-section" style="padding-top: 0px; padding-bottom: 0px;">
+  <?php if (count($data) > 0) : ?>
+    <div class="row">
+      <?php foreach ($data as $item) : ?>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="panel panel-default card-panel">
+            <div class="panel-heading">
+              <img src="<?php echo base_url($item->image1) ?>" alt="<?php echo $item->name ?>" class="card-image">
+              <!-- <img src="/application/modules/product/fish.jpg" alt="Fish" class="card-image"> -->
+            </div>
+            <div class="panel-body" style="text-align: center;">
+              <h3 class="panel-title"><?php echo $item->name ?></h3>
+              <p>This is the content of the card with an image. It can be short or long, and the card width will adjust based on the content length.</p>
+              <!-- <span style="float: left; font-size: 12px;"><?php echo $item->stock ?> Fishes</span>
+              <a href="<?php echo base_url('product/' . $item->product_category_id . '/' . $item->product_sub_category_id . '/' . $item->link) ?>" class="custom-btn">
+                <span style="float: right; font-size: 12px;"><?php echo ($item->sold_out <= $item->stock) ? 'Stock Available' : 'Out Of Stock' ?></span>
+              </a> -->
+              <div class="button-container">
+                <span class="stock-info"><?php echo $item->stock ?> Fishes</span>
+                <a href="<?php echo base_url('product/' . $item->product_category_id . '/' . $item->product_sub_category_id . '/' . $item->link) ?>" class="custom-btn">
+                  <span class="stock-status"><?php echo ($item->sold_out <= $item->stock) ? 'Stock Available' : 'Out Of Stock' ?></span>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       <?php endforeach; ?>
     </div>

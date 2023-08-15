@@ -90,8 +90,8 @@
         <div class="col-xs-12 col-sm-6 col-md-4">
           <div class="panel panel-default card-panel">
             <div class="panel-heading">
-              <!-- <img src="<?php echo base_url($item->image) ?>" alt="<?php echo $item->name ?>" class="card-image"> -->
-              <img src="/application/modules/product/fish.jpg" alt="Fish" class="card-image">
+              <img src="<?php echo base_url($item->image) ?>" alt="<?php echo $item->name ?>" class="card-image">
+              <!-- <img src="/application/modules/product/fish.jpg" alt="Fish" class="card-image"> -->
             </div>
             <div class="panel-body" style="text-align: center;">
               <h3 class="panel-title"><?php echo $item->name ?></h3>
