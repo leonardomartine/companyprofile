@@ -1,3 +1,5 @@
+
+
 <section id="products">
 
   <div class="card">
@@ -45,7 +47,7 @@
         <div class="col-lg-7 col-xs-12 probootstrap-animate">
           <div class="right">
             <div class="title"><?php echo $data->name ?></div>
-            <div class="price">Rp <?php echo number_format($data->price) ?></div>
+            <div class="price"> Description</div>
             <div class="description">
               <table>
                 <tr>
@@ -66,18 +68,30 @@
                 </tr>
               </table>
               <div class="clearfix"></div>
-              <a href="https://wa.me/<?php echo htmlspecialchars($app->contact->whatsapp); ?>" target="_blank">
-
-            $recipient_email = "business@cahayaabadi.org";
+ 
+              <?php
+$recipient_email = "business@cahayaabadi.org";
 $subject = "Pesan dari Website";
 $message = "Halo,\n\nTerima kasih telah mengunjungi website kami.";
 ?>
+
 <br>
 <a href="mailto:<?php echo $recipient_email ?>?subject=<?php echo urlencode($subject) ?>&body=<?php echo urlencode($message) ?>" target="_blank">
-  
   <i class="fa fa-envelope"></i>
-  Lewat email
+  By Email
 </a>
+
+<br>
+<?php
+// Ganti nomor berikut dengan nomor WhatsApp bisnis Anda
+$nomorWhatsApp = "81280604587";
+?>
+
+<!-- Tautan WA.me -->
+<a href="https://wa.me/<?php echo $nomorWhatsApp; ?>"> <i class="fa fa-phone"></i>  By WA</a>
+
+
+
 
               
               

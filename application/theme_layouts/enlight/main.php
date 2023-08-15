@@ -16,30 +16,33 @@
 <div class="probootstrap-page-wrapper">
   <!-- Fixed navbar -->
 
-  <div class="probootstrap-header-top">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-9 col-md-9 col-sm-9 probootstrap-top-quick-contact-info">
-          <span style="height: 20px; overflow: hidden;"><i class="icon-location2"></i><?php echo $app->contact->address ?></span>
-          <span><i class="icon-phone2"></i><?php echo $app->contact->phone ?></span>
-          <span><i class="icon-mail"></i><?php echo $app->contact->email ?></span>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-3 probootstrap-top-social">
-          <ul>
-            <?php if (!empty($app->contact->twitter)) : ?>
-              <li><a href="http://twitter.com/<?php echo $app->contact->twitter ?>" target="_blank"><i class="icon-twitter"></i></a></li>
-            <?php endif; ?>
-            <?php if (!empty($app->contact->facebook)) : ?>
-              <li><a href="http://facebook.com/<?php echo $app->contact->facebook ?>" target="_blank"><i class="icon-facebook2"></i></a></li>
-            <?php endif; ?>
-            <?php if (!empty($app->contact->instagram)) : ?>
-              <li><a href="http://instagram.com/<?php echo $app->contact->instagram ?>" target="_blank"><i class="icon-instagram2"></i></a></li>
-            <?php endif; ?>
-          </ul>
-        </div>
+  <div class="probootstrap-header-top" style="background-color: #D53832;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9 col-md-9 col-sm-9 probootstrap-top-quick-contact-info">
+        <span style="height: 20px; overflow: hidden; color: white;"><i class="icon-location2" style="color: white;"></i><?php echo $app->contact->address ?></span>
+        <span style="height: 20px; overflow: hidden; color: white;"><i class="icon-phone2" style="color: white;"></i><?php echo $app->contact->phone ?></span>
+        <span style="height: 20px; overflow: hidden; color: white;"><i class="icon-mail" style="color: white;"></i><?php echo $app->contact->email ?></span>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-3 probootstrap-top-social">
+        <ul>
+          <?php if (!empty($app->contact->twitter)) : ?>
+            <li><a href="http://twitter.com/<?php echo $app->contact->twitter ?>" target="_blank"><i class="icon-twitter"  style="background-color: white; color: red; border-radius: 50%; padding: 5px;"></i></a></li>
+          <?php endif; ?>
+          <?php if (!empty($app->contact->facebook)) : ?>
+            <li><a href="http://facebook.com/<?php echo $app->contact->facebook ?>" target="_blank"><i class="icon-facebook2"  style="background-color: white; color: red; border-radius: 50%; padding: 5px;"></i></a></li>
+          <?php endif; ?>
+          <?php if (!empty($app->contact->instagram)) : ?>
+            <li><a href="http://instagram.com/<?php echo $app->contact->instagram ?>" target="_blank"><i class="icon-instagram2" style="background-color: white; color: red; border-radius: 50%; padding: 5px;"></i></a></li>
+          <?php endif; ?>
+        </ul>
       </div>
     </div>
   </div>
+</div>
+
+
+
   <nav class="navbar navbar-default probootstrap-navbar">
     <div class="container">
       <div class="navbar-header">
@@ -162,114 +165,144 @@
 
     <!-- counter -->
     <div class="jumbotron" style="background-color: white;">
-      <div class="row w-100">
-        <div class="col-md-3">
-          <div class="card border-info mx-sm-1 p-3">
-            <div class="card border-info shadow text-info p-3 my-card"><span class="fa fa-car" aria-hidden="true"></span></div>
-            <div class="text-info text-center mt-3">
-              <h4>Customers</h4>
-            </div>
-            <div class="text-info text-center mt-2">
-              <h1 id="counter">0</h1>
-            </div>
-          </div>
+  <div class="row w-100">
+    <div class="col-md-3">
+      <div class="card border-info mx-sm-1 p-3">
+        <div class="text-info text-center mt-2">
+          <h1 id="counter" style="color: #1F95D2; font-weight: bold; font-size: 28px;">47</h1>
         </div>
-        <div class="col-md-3">
-          <div class="card border-success mx-sm-1 p-3">
-            <div class="card border-success shadow text-success p-3 my-card"><span class="fa fa-eye" aria-hidden="true"></span></div>
-            <div class="text-success text-center mt-3">
-              <h4>Exported Country</h4>
-            </div>
-            <div class="text-success text-center mt-2">
-              <h1 id="counter2">0</h1>
-            </div>
-          </div>
+        <div class="text-info text-center mt-3">
+          <h4 style="color: black; font-weight: bold; font-size: 18px;">Customers</h4>
         </div>
-        <div class="col-md-3">
-          <div class="card border-danger mx-sm-1 p-3">
-            <div class="card border-danger shadow text-danger p-3 my-card"><span class="fa fa-heart" aria-hidden="true"></span></div>
-            <div class="text-danger text-center mt-3">
-              <h4>Lively Products</h4>
-            </div>
-            <div class="text-danger text-center mt-2">
-              <h1 id="counter3">0%</h1>
-            </div>
-          </div>
+      </div>
+    </div>
+    <div class="col-md-3" style="border-left: 1px solid #ccc;">
+      <div class="card border-success mx-sm-1 p-3">
+        <div class="text-success text-center mt-2">
+          <h1 id="counter2" style="color: #1F95D2; font-weight: bold; font-size: 28px;">13</h1>
         </div>
-        <div class="col-md-3">
-          <div class="card border-warning mx-sm-1 p-3">
-            <div class="card border-warning shadow text-warning p-3 my-card"><span class="fa fa-inbox" aria-hidden="true"></span></div>
-            <div class="text-warning text-center mt-3">
-              <h4>Inbox</h4>
-            </div>
-            <div class="text-warning text-center mt-2">
-              <h1 id="counter4">0</h1>
-            </div>
+        <div class="text-success text-center mt-3">
+          <h4 style="color: black; font-weight: bold; font-size: 18px;">Exported Country</h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3" style="border-left: 1px solid #ccc;">
+      <div class="card border-danger mx-sm-1 p-3">
+        <div class="text-danger text-center mt-2">
+          <h1 id="counter3" style="color: #1F95D2; font-weight: bold; font-size: 28px;">0%</h1>
+        </div>
+        <div class="text-danger text-center mt-3">
+          <h4 style="color: black; font-weight: bold; font-size: 18px;">Lively Products</h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3" style="border-left: 1px solid #ccc;">
+      <div class="card border-warning mx-sm-1 p-3">
+        <div class="text-warning text-center mt-2">
+          <h1 id="counter4" style="color: #1F95D2; font-weight: bold; font-size: 28px;">0</h1>
+        </div>
+        <div class="text-warning text-center mt-3">
+          <h4 style="color: black; font-weight: bold; font-size: 18px;">Inbox</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<section class="probootstrap-section probootstrap-section-colored" style="background-color: #F7FAFC;">
+  <div class="container style">
+
+  </div>
+</section>
+
+<section class="probootstrap-section" style="padding-bottom: 20px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="probootstrap-flex-block">
+          <div class="probootstrap-text probootstrap-animate" style="flex: 1;">
+            <h3>About Us</h3>
+            <h4 style="color: red;">Indonesia Distribution in Whole World</h4>
+            <p>We offer solutions to Aqua Manufacturing and Aqua Hobbyist across various regions in the country. Ensuring customer satisfaction through Quality Assurance, we cater both large and small quantity purchases. Founded in 2000, our company has branches in Tangerang and Cirebon</p>
+            <p><a href="<?php echo base_url('about') ?>" class="btn btn-primary">Learn More</a></p>
+          </div>
+          <div class="probootstrap-image probootstrap-animate" style="flex: 1; background: url('<?php echo $data->intro_image ?>') center/cover; border-radius: 12px 0px 12px 60px;">
           </div>
         </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <section class="probootstrap-section probootstrap-section-colored">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-left section-heading probootstrap-animate">
-            <h2>Welcome to <?php echo $app->app_name ?></h2>
-          </div>
-        </div>
-      </div>
-    </section>
+<style>
+  @media (max-width: 768px) {
+    .probootstrap-flex-block {
+      flex-direction: column;
+    }
 
-    <section class="probootstrap-section" style="padding-bottom: 20px;">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="probootstrap-flex-block">
-              <div class="probootstrap-text probootstrap-animate">
-                <h3>About Us</h3>
-                <p><?php echo $app->app_description ?></p>
-                <p><a href="<?php echo base_url('about') ?>" class="btn btn-primary">Learn More</a></p>
-              </div>
-              <div class="probootstrap-image probootstrap-animate" style="background-image: url('<?php echo $data->intro_image ?>')">
-              </div>
-            </div>
-          </div>
-        </div>
+    .probootstrap-text, .probootstrap-image {
+      width: 100%;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .probootstrap-image {
+      background-size: cover; /* Adjust background size */
+      background-position: center; /* Adjust background position */
+      border-radius: 12px;
+      height: 250px; /* Adjust the height for mobile layout */
+    }
+  }
+</style>
+
+
+
+
+
+
+
+
+
+
+
       </div>
-    </section>
-  <?php endif; ?>
+    </div>
+  </div>
+</section>
+<?php endif; ?>
+
 
   <?php if (!in_array($this->router->fetch_class(), ['dashboard', 'page'])) : ?>
-    <section class="probootstrap-section probootstrap-section-colored">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-left section-heading probootstrap-animate mb0">
-            <h1 class="mb0"><?php echo (!empty($app->active_module->name) ? $app->active_module->name : '-') ?></h1>
-            <?php if (!empty($app->active_module->description)) : ?>
-              <p style="margin-bottom: 0px;"><?php echo $app->active_module->description ?></p>
-            <?php endif; ?>
-          </div>
-        </div>
-      </div>
-    </section>
+  
   <?php endif; ?>
 
   <section class="probootstrap-section probootstrap-bg-white">
     <div class="container">
       {content}
     </div>
+    
   </section>
 
-  <section class="probootstrap-cta">
+  <section class="probootstrap-cta" style="background-color: #eef2f7;">
     <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h2 class="probootstrap-animate" data-animate-effect="fadeInRight">Contact us for more information</h2>
-          <a href="<?php echo base_url('contact') ?>" role="button" class="btn btn-primary btn-lg btn-ghost probootstrap-animate" data-animate-effect="fadeInLeft">Contact Us</a>
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="probootstrap-animate" data-animate-effect="fadeInRight" style="color: #000000; font-family: 'Montserrat', sans-serif; font-size: 28px;">Contact Us for More Information</h2>
+                <a href="<?php echo base_url('contact') ?>" role="button" class="btn btn-primary btn-lg btn-ghost probootstrap-animate" data-animate-effect="fadeInLeft" style="background-color: #1F95D2; color: #FFFFFF; font-family: 'Montserrat', sans-serif; font-size: 26px;">Contact Us</a>
+
+            </div>
         </div>
-      </div>
     </div>
-  </section>
+</section>
+
 
 </div>
 <!-- END wrapper -->

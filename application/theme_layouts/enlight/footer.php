@@ -1,26 +1,45 @@
   <!--==========================
     Footer
   ============================-->
+<style>
 
+.rounded-icon {
+  display: inline-block;
+  border-radius: 50%;
+  padding: 5px; /* Sesuaikan padding sesuai keinginan */
+  background-color: #a1a1a1; /* Set latar belakang menjadi putih */
+
+}
+
+/* Ganti warna latar belakang saat ikon diberi hover */
+.rounded-icon:hover {
+  background-color: #f0f0f0; /* Sesuaikan warna latar belakang hover */
+}
+.rounded-icon span {
+  color: #394855; /* Set warna ikon */
+}
+
+</style>
   <footer class="probootstrap-footer probootstrap-bg probootstrap-page-wrapper">
     <div class="container">
       <div class="row">
         <div class="col-md-4">
           <div class="probootstrap-footer-widget">
-            <h3>About Us</h3>
+            <h3>Cahaya Abadi</h3>
             <p><?php echo $app->app_description ?></p>
             <h3>Social</h3>
             <ul class="probootstrap-footer-social">
-              <?php if (!empty($app->contact->twitter)) : ?>
-                <li><a href="http://twitter.com/<?php echo $app->contact->twitter ?>" target="_blank"><span class="icon-twitter"></span></a></li>
-              <?php endif; ?>
-              <?php if (!empty($app->contact->facebook)) : ?>
-                <li><a href="http://facebook.com/<?php echo $app->contact->facebook ?>" target="_blank"><span class="icon-facebook"></span></a></li>
-              <?php endif; ?>
-              <?php if (!empty($app->contact->instagram)) : ?>
-                <li><a href="http://instagram.com/<?php echo $app->contact->instagram ?>" target="_blank"><span class="icon-instagram"></span></a></li>
-              <?php endif; ?>
-            </ul>
+  <?php if (!empty($app->contact->twitter)) : ?>
+    <li><a href="http://twitter.com/<?php echo $app->contact->twitter ?>" target="_blank"><span class="icon-twitter rounded-icon"></span></a></li>
+  <?php endif; ?>
+  <?php if (!empty($app->contact->facebook)) : ?>
+    <li><a href="http://facebook.com/<?php echo $app->contact->facebook ?>" target="_blank"><span class="icon-facebook rounded-icon"></span></a></li>
+  <?php endif; ?>
+  <?php if (!empty($app->contact->instagram)) : ?>
+    <li><a href="http://instagram.com/<?php echo $app->contact->instagram ?>" target="_blank"><span class="icon-instagram rounded-icon"></span></a></li>
+  <?php endif; ?>
+</ul>
+
           </div>
         </div>
         <div class="col-md-3 col-md-push-1">

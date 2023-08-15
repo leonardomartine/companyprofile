@@ -1,7 +1,7 @@
 <section id="moduleService">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title"><?php echo (isset($card_title)) ? $card_title : '' ?></h4>
+        <h4 class="card-title">adada></h4>
         <h6 class="card-subtitle"><?php echo (isset($card_subTitle)) ? $card_subTitle : '' ?></h6>
     
         <div class="table-action">

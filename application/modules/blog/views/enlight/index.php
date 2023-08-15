@@ -1,4 +1,9 @@
 <section class="probootstrap-section" style="padding-top: 0px; padding-bottom: 0px;">
+<div class="container">
+    <div style="text-align: center;">
+      <h2>Blogs</h2>
+      <h1 style="color: #EC2125; font-family: Monstreat;">Lorem Ipsum</h1>
+    </div>
   <?php if (count($data) > 0): ?>
   <div class="row">
     <?php foreach ($data as $item): ?>
