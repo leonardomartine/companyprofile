@@ -107,9 +107,9 @@
     <div class="row">
       <?php foreach ($data as $item) : ?>
         <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="panel panel-default card-panel">
-            <div class="panel-heading">
-              <img src="<?php echo base_url($item->image1) ?>" alt="<?php echo $item->name ?>" class="card-image">
+          <div class="panel panel-default card-panel" style="border-radius: 20px;">
+            <div class="panel-heading ">
+              <img src="<?php echo base_url($item->image1) ?>" alt="<?php echo $item->name ?>" class="card-image" style="border-radius: 20px;">
               <!-- <img src="/application/modules/product/fish.jpg" alt="Fish" class="card-image"> -->
             </div>
             <div class="panel-body" style="text-align: center;">
