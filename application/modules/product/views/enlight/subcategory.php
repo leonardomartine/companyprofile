@@ -89,7 +89,7 @@
 
 <div style="text-align: center;">
   <p class="titleProd" style="font-size: large; line-height: 1;">PRODUCTS</p>
-  <p class="titleProd" style="margin-top: -10px; font-size:xx-large; color: red; font-weight: bold;">Ornament <?php echo $item->name ?></p>
+  <p class="titleProd" style="margin-top: -10px; font-size:xx-large; color: red; font-weight: bold;"><?php echo $item->product_category_id ?></p>
   <br>
 </div>
 
