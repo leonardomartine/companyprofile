@@ -52,6 +52,10 @@
     /* Change text color on hover */
     text-decoration: none;
   }
+
+  .titleProd {
+    margin-top: 0;
+  }
 </style>
 
 <!-- <section class="probootstrap-section" style="padding-top: 0px; padding-bottom: 0px;">
@@ -82,6 +86,12 @@
     <?php echo $pagination ?>
   </div>
 </section> -->
+
+<div style="text-align: center;">
+  <p class="titleProd" style="font-size: large; line-height: 1;">PRODUCTS</p>
+  <p class="titleProd" style="margin-top: -10px; font-size:xx-large; color: red; font-weight: bold;">Ornament <?php echo $item->name ?></p>
+  <br>
+</div>
 
 <section class="probootstrap-section" style="padding-top: 0px; padding-bottom: 0px;">
   <?php if (count($data) > 0) : ?>
