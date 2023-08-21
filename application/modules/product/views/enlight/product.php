@@ -55,7 +55,13 @@
     text-decoration: none;
     transition: border-color 0.3s;
     border-radius: 20px;
+    color: green;
     /* Add a smooth transition effect for border color */
+  }
+
+  .custom-btn.out-of-stock {
+    border-color: red;
+    color: #007bff;
   }
 
   .custom-btn:hover {
@@ -121,7 +127,10 @@
               </a> -->
               <div class="button-container">
                 <span class="stock-info"><?php echo $item->stock ?> Fishes</span>
-                <a href="<?php echo base_url('product/' . $item->product_category_id . '/' . $item->product_sub_category_id . '/' . $item->link) ?>" class="custom-btn">
+                <!-- <a href="<?php echo base_url('product/' . $item->product_category_id . '/' . $item->product_sub_category_id . '/' . $item->link) ?>" class="custom-btn">
+                  <span class="stock-status"><?php echo ($item->sold_out <= $item->stock) ? 'Stock Available' : 'Out Of Stock' ?></span>
+                </a> -->
+                <a href="<?php echo base_url('product/' . $item->product_category_id . '/' . $item->product_sub_category_id . '/' . $item->link) ?>" class="custom-btn <?php echo ($item->sold_out <= $item->stock) ? '' : 'out-of-stock' ?>">
                   <span class="stock-status"><?php echo ($item->sold_out <= $item->stock) ? 'Stock Available' : 'Out Of Stock' ?></span>
                 </a>
               </div>
@@ -140,3 +149,18 @@
     <?php echo $pagination ?>
   </div>
 </section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $(".custom-btn.out-of-stock").hover(function() {
+      $(this).css("background-color", "#f00");
+      $(this).css("color", "#fff");
+      $(this).css("border-color", "#f00");
+    }, function() {
+      $(this).css("background-color", "#fff");
+      $(this).css("color", "#f00");
+      $(this).css("border-color", "#f00");
+    });
+  });
+</script>
