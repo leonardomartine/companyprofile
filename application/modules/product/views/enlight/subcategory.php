@@ -100,7 +100,7 @@
         <div class="col-xs-12 col-sm-6 col-md-4">
           <div class="panel panel-default card-panel" style="border-radius: 20px;">
             <div class="panel-heading">
-              <img src="<?php echo base_url($item->image) ?>" alt="<?php echo $item->name ?>" class="card-image" style="border-radius: 20px;">
+              <img src="<?php echo base_url($item->image) ?>" alt="<?php echo $item->name ?>" class="card-image" style="border-radius: 20px; width: 100%; height: 200px;">
               <!-- <img src="/application/modules/product/fish.jpg" alt="Fish" class="card-image"> -->
             </div>
             <div class="panel-body" style="text-align: center;">
@@ -121,7 +121,7 @@
     </div>
   <?php endif; ?>
 
-  <div class="text-center probootstrap-animate">
+  <!-- <div class="text-center probootstrap-animate">
     <?php echo $pagination ?>
-  </div>
+  </div> -->
 </section>
