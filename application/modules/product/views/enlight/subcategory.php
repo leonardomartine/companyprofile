@@ -87,9 +87,23 @@
   </div>
 </section> -->
 
+<?php
+// Assuming you have a database connection
+$pdo = new PDO("mysql:host=localhost;dbname=cpsmi", "root", "");
+
+// Fetch the product category name based on product_category_id
+$productCategoryId = $item->product_category_id;
+$categorySql = "SELECT name FROM product_category WHERE id = :productCategoryId";
+$categoryStmt = $pdo->prepare($categorySql);
+$categoryStmt->bindParam(':productCategoryId', $productCategoryId, PDO::PARAM_INT);
+$categoryStmt->execute();
+
+$category = $categoryStmt->fetch(PDO::FETCH_ASSOC);
+?>
+
 <div style="text-align: center;">
   <p class="titleProd" style="font-size: large; line-height: 1;">PRODUCTS</p>
-  <p class="titleProd" style="margin-top: -10px; font-size:xx-large; color: red; font-weight: bold;"><?php echo $item->product_category_id ?></p>
+  <p class="titleProd" style="margin-top: -10px; font-size:xx-large; color: red; font-weight: bold;"><?php echo $category['name'] ?></p>
   <br>
 </div>
 
