@@ -115,21 +115,13 @@
         <div class="col-xs-12 col-sm-6 col-md-4">
           <div class="panel panel-default card-panel" style="border-radius: 20px;">
             <div class="panel-heading ">
-              <img src="<?php echo base_url($item->image1) ?>" alt="<?php echo $item->name ?>" class="card-image" style="border-radius: 20px;">
-              <!-- <img src="/application/modules/product/fish.jpg" alt="Fish" class="card-image"> -->
+              <img src="<?php echo base_url($item->image1) ?>" alt="<?php echo $item->name ?>" class="card-image" style="border-radius: 20px; width: 100%; height: 200px;">
             </div>
             <div class="panel-body" style="text-align: center;">
               <h3 class="panel-title"><?php echo $item->name ?></h3>
               <p>This is the content of the card with an image. It can be short or long, and the card width will adjust based on the content length.</p>
-              <!-- <span style="float: left; font-size: 12px;"><?php echo $item->stock ?> Fishes</span>
-              <a href="<?php echo base_url('product/' . $item->product_category_id . '/' . $item->product_sub_category_id . '/' . $item->link) ?>" class="custom-btn">
-                <span style="float: right; font-size: 12px;"><?php echo ($item->sold_out <= $item->stock) ? 'Stock Available' : 'Out Of Stock' ?></span>
-              </a> -->
               <div class="button-container">
                 <span class="stock-info"><?php echo $item->stock ?> Fishes</span>
-                <!-- <a href="<?php echo base_url('product/' . $item->product_category_id . '/' . $item->product_sub_category_id . '/' . $item->link) ?>" class="custom-btn">
-                  <span class="stock-status"><?php echo ($item->sold_out <= $item->stock) ? 'Stock Available' : 'Out Of Stock' ?></span>
-                </a> -->
                 <a href="<?php echo base_url('product/' . $item->product_category_id . '/' . $item->product_sub_category_id . '/' . $item->link) ?>" class="custom-btn <?php echo ($item->sold_out <= $item->stock) ? '' : 'out-of-stock' ?>">
                   <span class="stock-status"><?php echo ($item->sold_out <= $item->stock) ? 'Stock Available' : 'Out Of Stock' ?></span>
                 </a>
